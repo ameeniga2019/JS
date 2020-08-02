@@ -1,0 +1,15 @@
+<html>
+    <title>This ia new document</title>
+    <body>
+        <p >This is new document</p>
+        <button onclick="new1()">Click</button>
+    </body>
+</html>
+<script>
+function new1()
+{
+    docBody = document.getElementsByTagName("body")[0];
+var u = docBody.getElementsByTagName('p');
+console.log(u[0])
+}
+</script>

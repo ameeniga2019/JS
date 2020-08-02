@@ -1,0 +1,3 @@
+Hi Hello
+When someone adds a new note, we want to save it somewhere, preferably on the filesystem. So the next time they try to fetch, remove, or read that note, they actually get the note back. To do this, we'll need to introduce something called JSON. If you're already familiar with JSON, you probably know it is super popular. It stands for 
+JavaScript Object Notation and it's a way to represent JavaScript arrays and objects using a string. Now, why would you ever want to do that?}

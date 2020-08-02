@@ -1,0 +1,25 @@
+// Please save this file as text.js and run this file using the command: 'node test.js'  by providing the data values while calling the function getProcessingPage.
+
+function timer(ms) {
+    return new Promise(res => setTimeout(res, ms));
+   }
+function getProcessingPage(data) { 
+    var myArr = data;
+    myArr.map( async item => {
+       if (item.state == 'processing')
+         await timer(2000);
+      else if (item.state == 'success')
+           return({ title: 'Order complete' ,message: null })
+       else if (item.state == 'error') {
+           if (item.errorCode == 'NO_STOCK')
+               return ({ title: 'Error page', message: 'No stock has been found' })
+           else if (item.errorCode == 'INCORRECT_DETAILS')
+               return ({ title: 'Error page', message: 'Incorrect details have been entered' })
+           else if (item.errorCode == null)
+               return ({ title: 'Error page', message: null })
+           else if (typeof(item.errorCode) == undefined)
+               return({ title: 'Error page', message: null })
+     }
+   })
+}
+
